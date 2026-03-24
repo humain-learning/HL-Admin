@@ -1,0 +1,21 @@
+from frappe.utils import add_to_date, format_date, format_time, get_datetime, getdate
+
+
+def convert_to_ordinal_timing(start_time, duration):
+    start_time_obj = get_datetime(f"2000-01-01 {start_time}")
+    end_time_obj = add_to_date(start_time_obj, seconds=duration, as_datetime=True)
+
+    start_label = format_time(start_time_obj, "h a").replace(" ", "").upper()
+    end_label = format_time(end_time_obj, "h a").replace(" ", "").upper()
+    return f"{start_label}-{end_label}"
+
+def convert_to_ordinal_date(date):
+    date_obj = getdate(date)
+    day = date_obj.day
+
+    if 11 <= day % 100 <= 13:
+        suffix = "th"
+    else:
+        suffix = {1: "st", 2: "nd", 3: "rd"}.get(day % 10, "th")
+
+    return f"{day}{suffix} {format_date(date_obj, 'MMM')}"

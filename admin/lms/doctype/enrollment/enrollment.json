@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-13 10:39:35.187197",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "batch",
+  "student",
+  "canvas_enrollment_id",
+  "canvas_enrollment_state",
+  "start_date",
+  "end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "batch",
+   "fieldtype": "Link",
+   "label": "Batch",
+   "options": "Batch"
+  },
+  {
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "label": "Student",
+   "options": "Student"
+  },
+  {
+   "fieldname": "canvas_enrollment_id",
+   "fieldtype": "Data",
+   "label": "Canvas Enrollment ID"
+  },
+  {
+   "fieldname": "canvas_enrollment_state",
+   "fieldtype": "Select",
+   "label": "Canvas Enrollment State",
+   "options": "active\ninvited\ninactive\ncompleted\ndeleted"
+  },
+  {
+   "fetch_from": "batch.start_date",
+   "fieldname": "start_date",
+   "fieldtype": "Datetime",
+   "label": "Start Date"
+  },
+  {
+   "fetch_from": "batch.end_date",
+   "fieldname": "end_date",
+   "fieldtype": "Datetime",
+   "label": "End Date"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-24 12:29:41.024005",
+ "modified_by": "Administrator",
+ "module": "LMS",
+ "name": "Enrollment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
