@@ -28,7 +28,7 @@ def batch_details_of_template(template_id,start_date):
     for batch in batches:
         batch_doc = frappe.get_doc("Batch", batch)
         response.append({
-            'name': f'{batch_doc.batch_name} + Batch',
+            'name': f'{batch_doc.batch_name} Batch',
             'start_date': convert_to_ordinal_date(batch_doc.start_date),
             'limited_seats': batch_doc.limited_seats,
             'sold_out': batch_doc.sold_out,
