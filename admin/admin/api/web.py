@@ -54,7 +54,10 @@ def current_active_discount(template_id):
 
     web_discounts = frappe.get_all(
         "Web Discount",
-        filters={"course": template_id},
+        filters={
+			"course": template_id,
+			"enabled": 1,
+        },
         fields=["name", "event"],
     )
     if not web_discounts:
