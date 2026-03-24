@@ -38,7 +38,7 @@ def get_single_course_details(course_id,template: bool):
                 "course_name": data.get("name"),
                 "course_code": data.get("course_code"),
                 "sub_account": data.get('account_id'),
-                "state": data.get('workflow_state').capitalize() if not template else None,
+                "state": data.get('workflow_state').capitalize(),
             }
 
     if not template:
@@ -51,8 +51,7 @@ def get_single_course_details(course_id,template: bool):
                 "course_name": data.get("name"),
                 "course_code": data.get("course_code"),
                 "sub_account": data.get('account_id'),
-                "state": data.get('workflow_state').capitalize() if not template else None,
+                "state": data.get('workflow_state').capitalize(),
                 "start_date": start_at,
                 "end_date": end_at,
             }
-    
