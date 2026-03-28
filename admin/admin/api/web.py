@@ -83,10 +83,12 @@ def current_active_discount(template_id):
     )
 
     if not active_tiers:
+        base_price = frappe.db.get_value("Template Course", template_id, "price")
         return {
             "template_id": template_id,
             "has_discount": False,
             "active_tier": None,
+            "base_price": base_price,
         }
 
     tier = active_tiers[0]
