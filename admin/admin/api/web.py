@@ -36,7 +36,7 @@ def batch_details_of_template(template_id,start_date):
                 {
                     'date': convert_to_ordinal_date(row.date),
                     'day': row.day,
-                    'timing': "TBD" if batch_doc.time_tbd else (convert_to_ordinal_timing(row.time, row.duration) +(" - Graduation" if row.graduation else " - Doubt Clearing" if row.doubt_clearing else ""))
+                    'timing': "TBD" if row.time_tbd else (convert_to_ordinal_timing(row.time, row.duration) +(" - Graduation" if row.graduation else " - Doubt Clearing" if row.doubt_clearing else ""))
                 }
                 for row in batch_doc.itinerary
             ]
