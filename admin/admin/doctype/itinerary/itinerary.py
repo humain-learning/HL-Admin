@@ -15,3 +15,6 @@ class Itinerary(Document):
 
 		if self.doubt_clearing and self.graduation:
 			frappe.throw("Doubt Clearing and Graduation cannot be selected at the same time.")
+		if self.time_tbd:
+			self.time = None
+			self.duration = None

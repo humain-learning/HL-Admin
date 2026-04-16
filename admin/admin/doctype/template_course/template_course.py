@@ -18,4 +18,4 @@ class TemplateCourse(Document):
         for name in discounts:
             wd = frappe.get_doc("Web Discount", name)
             wd.base_price = self.price
-            wd.save()
+            wd.save() 
